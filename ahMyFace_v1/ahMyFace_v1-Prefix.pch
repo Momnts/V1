@@ -20,4 +20,5 @@
     #import <CoreVideo/CoreVideo.h>
     #import <CoreMedia/CoreMedia.h>
     #import "AFNetworking.h"
+    #import "UNIRest.h" 
 #endif

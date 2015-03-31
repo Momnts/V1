@@ -86,7 +86,8 @@
     client.delegate = self;
     
     NSLog(@"person name is %@", _labelTextField.text);
-    [client train_image:self.captured_image person_id:_labelTextField.text];
+    [client train_image:self.captured_image file_name:@"test.jpg" person_id:_labelTextField.text];
+    
 }
 
 /*

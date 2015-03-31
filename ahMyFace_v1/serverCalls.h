@@ -25,7 +25,7 @@
 @property(strong, nonatomic) NSString *zipCode;
 
 - (void) recognize_image: (UIImage*)image file_name:(NSString*)name;
-- (void) train_image: (UIImage*)image person_id:(NSString*)pid;
+- (void) train_image: (UIImage*)image file_name:(NSString*)name person_id:(NSString*)pid;
 - (void) rebuild_album;
 
 @end
