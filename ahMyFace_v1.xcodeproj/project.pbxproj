@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		10D2D4D41ACBA380006EE39A /* emailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D2D4D31ACBA380006EE39A /* emailController.m */; };
+		10FEDABE1ACBD58900C61B88 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10FEDABC1ACBD58900C61B88 /* Main_iPhone.storyboard */; };
 		411882B31ABE9105002B8596 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 411882B21ABE9105002B8596 /* Foundation.framework */; };
 		411882B51ABE9105002B8596 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 411882B41ABE9105002B8596 /* CoreGraphics.framework */; };
 		411882B71ABE9105002B8596 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 411882B61ABE9105002B8596 /* UIKit.framework */; };
 		411882BD1ABE9105002B8596 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 411882BB1ABE9105002B8596 /* InfoPlist.strings */; };
 		411882BF1ABE9105002B8596 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 411882BE1ABE9105002B8596 /* main.m */; };
 		411882C31ABE9105002B8596 /* PAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 411882C21ABE9105002B8596 /* PAppDelegate.m */; };
-		411882C61ABE9105002B8596 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 411882C41ABE9105002B8596 /* Main_iPhone.storyboard */; };
 		411882C91ABE9105002B8596 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 411882C71ABE9105002B8596 /* Main_iPad.storyboard */; };
 		411882CC1ABE9105002B8596 /* PViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 411882CB1ABE9105002B8596 /* PViewController.m */; };
 		411882CE1ABE9105002B8596 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 411882CD1ABE9105002B8596 /* Images.xcassets */; };
@@ -70,6 +70,7 @@
 /* Begin PBXFileReference section */
 		10D2D4D21ACBA380006EE39A /* emailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = emailController.h; path = "../../ios workspace/EmailPhotos/EmailPhotos/emailController.h"; sourceTree = "<group>"; };
 		10D2D4D31ACBA380006EE39A /* emailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = emailController.m; path = "../../ios workspace/EmailPhotos/EmailPhotos/emailController.m"; sourceTree = "<group>"; };
+		10FEDABD1ACBD58900C61B88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../Moments copy/ahMyFace_v1/Base.lproj/Main_iPhone.storyboard"; sourceTree = "<group>"; };
 		411882AF1ABE9105002B8596 /* ahMyFace_v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ahMyFace_v1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		411882B21ABE9105002B8596 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		411882B41ABE9105002B8596 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -80,7 +81,6 @@
 		411882C01ABE9105002B8596 /* ahMyFace_v1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ahMyFace_v1-Prefix.pch"; sourceTree = "<group>"; };
 		411882C11ABE9105002B8596 /* PAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PAppDelegate.h; sourceTree = "<group>"; };
 		411882C21ABE9105002B8596 /* PAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PAppDelegate.m; sourceTree = "<group>"; };
-		411882C51ABE9105002B8596 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		411882C81ABE9105002B8596 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		411882CA1ABE9105002B8596 /* PViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PViewController.h; sourceTree = "<group>"; };
 		411882CB1ABE9105002B8596 /* PViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PViewController.m; sourceTree = "<group>"; };
@@ -236,6 +236,7 @@
 				41AA46491ACA2C360095349A /* UNIHTTPRequest.m */,
 				41AA464A1ACA2C360095349A /* UNIHTTPRequestWithBody.h */,
 				41AA464B1ACA2C360095349A /* UNIHTTPRequestWithBody.m */,
+				10FEDABC1ACBD58900C61B88 /* Main_iPhone.storyboard */,
 				41AA464C1ACA2C360095349A /* Unirest-Prefix.pch */,
 				10D2D4D21ACBA380006EE39A /* emailController.h */,
 				10D2D4D31ACBA380006EE39A /* emailController.m */,
@@ -245,7 +246,6 @@
 				41AA46501ACA2C360095349A /* UNIUrlConnection.m */,
 				411882C11ABE9105002B8596 /* PAppDelegate.h */,
 				411882C21ABE9105002B8596 /* PAppDelegate.m */,
-				411882C41ABE9105002B8596 /* Main_iPhone.storyboard */,
 				411883B21AC4A284002B8596 /* MomntMeController.h */,
 				411883B31AC4A284002B8596 /* MomntMeController.m */,
 				411883AF1AC4A17A002B8596 /* HomeController.h */,
@@ -410,8 +410,8 @@
 			files = (
 				411882F81ABEABC2002B8596 /* jimStark.png in Resources */,
 				411882C91ABE9105002B8596 /* Main_iPad.storyboard in Resources */,
+				10FEDABE1ACBD58900C61B88 /* Main_iPhone.storyboard in Resources */,
 				411882CE1ABE9105002B8596 /* Images.xcassets in Resources */,
-				411882C61ABE9105002B8596 /* Main_iPhone.storyboard in Resources */,
 				411882BD1ABE9105002B8596 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,20 +478,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		10FEDABC1ACBD58900C61B88 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				10FEDABD1ACBD58900C61B88 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
 		411882BB1ABE9105002B8596 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				411882BC1ABE9105002B8596 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		411882C41ABE9105002B8596 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				411882C51ABE9105002B8596 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 		411882C71ABE9105002B8596 /* Main_iPad.storyboard */ = {
