@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3wz-hw-rlh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C2043" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3wz-hw-rlh">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
@@ -130,15 +130,18 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="231"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EDO-TX-LNQ">
-                                            <rect key="frame" x="8" y="8" width="137" height="141"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Yb-xB-Eed">
-                                            <rect key="frame" x="8" y="175" width="304" height="21"/>
+                                            <rect key="frame" x="8" y="197" width="320" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EDO-TX-LNQ">
+                                            <rect key="frame" x="0.0" y="49" width="320" height="133"/>
+                                        </imageView>
+                                        <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Xd-gH-tvM">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        </navigationBar>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -152,11 +155,19 @@
                             <outlet property="delegate" destination="2BR-oX-uZ4" id="rQf-KS-Hoa"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Sja-is-atQ"/>
+                    <toolbarItems>
+                        <barButtonItem title="send" id="CjN-Qi-BTD">
+                            <connections>
+                                <action selector="send:" destination="2BR-oX-uZ4" id="hmx-Rw-Fib"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="c62-gF-Ex5"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wkd-bU-N92" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2176" y="869"/>
+            <point key="canvasLocation" x="2234" y="788"/>
         </scene>
         <!--Face Detect Controller-->
         <scene sceneID="SIB-ks-lWC">

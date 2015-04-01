@@ -14,5 +14,7 @@
 
 @property (strong, nonatomic) NSMutableArray *faces;
 @property (strong, nonatomic) NSMutableArray *names;
+- (IBAction)send:(id)sender;
+
 
 @end
