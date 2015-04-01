@@ -7,6 +7,7 @@
 //
 
 #import "showFacesController.h"
+#import "emailController.h"
 
 @interface showFacesController ()
 
@@ -32,8 +33,11 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
 
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -110,16 +114,18 @@
 }
 */
 
-/*
-#pragma mark - Navigation
 
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"send"])
+    {
+        emailController *EC = [segue destinationViewController];
+        [EC setFaces:self.faces];
+        [EC setNames:self.names];
+    }
 }
 
- */
-
+- (IBAction)send:(id)sender {
+}
 @end
