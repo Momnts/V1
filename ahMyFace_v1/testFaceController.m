@@ -14,6 +14,8 @@
 
 @implementation testFaceController
 
+@synthesize faces;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -41,7 +43,7 @@
 }
 
 - (IBAction)showFaces:(id)sender {
-    [self performSegueWithIdentifier:@"seperateFaces" sender:nil];
+    //[self performSegueWithIdentifier:@"seperateFaces" sender:nil];
 }
 
 - (void) loadImage
@@ -174,15 +176,18 @@
 {
     serverCalls *client = [[serverCalls alloc] init];
     client.delegate = self;
+    NSLog(@"in recognize faces count is %lu", (unsigned long)self.faces.count);
     
-    [client recognize_image:[self.faces objectAtIndex:0] file_name:@"test.jpg"];
+    if (self.faces == nil || [self.faces count] == 0) {
+        NSLog(@"array is empty");
+        
+    }
+    
+    [client recognize_image:self.faces file_name:@"test.jpg"];
 }
 
--(void)client:(serverCalls *)serverCalls sendWithData:(NSDictionary *)responseObject {
-    NSLog(@"%@", responseObject);
-    NSString *person = [[[[responseObject objectForKey:@"images"] objectAtIndex:0] objectForKey:@"transaction"] objectForKey:@"subject"] ;
-     NSLog(@"person is %@", person);
-    [self.names addObject:person];
+-(void)client:(serverCalls *)serverCalls sendWithNames:(NSMutableArray *)names {
+    self.names = names;
     [self performSegueWithIdentifier:@"seperateFaces" sender:nil];
 }
 

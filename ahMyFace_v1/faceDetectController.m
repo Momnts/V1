@@ -81,10 +81,8 @@
 - (IBAction)showFaces:(id)sender {
     serverCalls *client = [[serverCalls alloc] init];
     client.delegate = self;
-    
-    NSLog(@"person name is %@", _labelTextField.text);
+
     [client train_image:self.captured_image file_name:@"test.jpg" person_id:_labelTextField.text];
-    
 }
 
 -(void)client:(serverCalls *)serverCalls sendWithData:(NSDictionary *)responseObject {

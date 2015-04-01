@@ -17,23 +17,48 @@ static NSString* const AlbumKey = @"af373ab0fbe1ec28578a56c025821f7cdef595bc0403
 
 @synthesize delegate;
 
-- (void) recognize_image: (UIImage*)image file_name: (NSString*) name
+- (void) recognize_image: (NSMutableArray*)faces file_name: (NSString*) name
 {
-    UIImage *localImage = image;
-    [KairosSDK recognizeWithImage:localImage
-                        threshold:@".65"
-                      galleryName:@"gallery1"
-                       maxResults:@"10"
-                          success:^(NSDictionary *response) {
-                              
-                              
-                              [delegate client:self sendWithData:response ];
-                              
+    NSMutableArray *names = [[NSMutableArray alloc] init];
+
+    __block BOOL *finishedBlock;
+    finishedBlock = false;
+    
+    for (int i=0; i < faces.count; i++)
+    {
+        UIImage *localImage = [faces objectAtIndex:(NSInteger) i];
+      
+        finishedBlock = false;
+        
+        NSLog(@"i is %d", i);
+        [KairosSDK recognizeWithImage:localImage
+                            threshold:@".6"
+                          galleryName:@"gallery1"
+                           maxResults:@"10"
+                              success:^(NSDictionary *response) {
+                                  NSLog(@"response is %@", response);
+                                  NSString *person = [[[[response objectForKey:@"images"] objectAtIndex:0] objectForKey:@"transaction"] objectForKey:@"subject"] ;
+                                  NSLog(@"person is %@", person);
+                                  [names addObject:person];
+                                  finishedBlock = true;
+                                if (i==(faces.count-1))
+                                {
+                                    NSLog(@"finished");
+                                    [delegate client:self sendWithNames:names ];
+                                }
                           } failure:^(NSDictionary *response) {
                               
                               NSLog(@"%@", response);
                               
                           }];
+        while (finishedBlock == false)
+        {
+            //NSLog(@"doing nothing");
+        }
+    }
+    
+    
+    
  /*
     NSURL *baseURL = [NSURL URLWithString:BaseURLString];
     

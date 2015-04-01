@@ -13,8 +13,8 @@
 
 
 @optional
--(void) client:(serverCalls *) serverCalls sendWithData:(NSDictionary*) responseObject; // to:(NSString*)view ;
--(void) client:(serverCalls *) serverCalls confirmationWithZipCode:(BOOL) success;
+-(void) client:(serverCalls *) serverCalls sendWithData:(NSDictionary*) responseObject;
+-(void) client:(serverCalls *) serverCalls sendWithNames:(NSMutableArray*) names;
 
 @end
 
@@ -24,7 +24,7 @@
 @property (nonatomic, assign)id delegate;
 @property(strong, nonatomic) NSString *zipCode;
 
-- (void) recognize_image: (UIImage*)image file_name:(NSString*)name;
+- (void) recognize_image: (NSMutableArray*)image file_name:(NSString*)name;
 - (void) train_image: (UIImage*)image file_name:(NSString*)name person_id:(NSString*)pid;
 - (void) rebuild_album;
 

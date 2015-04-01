@@ -65,7 +65,7 @@
     
     long row = [indexPath row];
     //cell.bounds.size.height = [[[_faces objectAtIndex:row]
-    [cell.facePic setImage:[_faces objectAtIndex:row]];
+    [cell.facePic setImage:[self.faces objectAtIndex:row]];
     cell.nameLabel.text = [self.names objectAtIndex:row];
     
     return cell;
