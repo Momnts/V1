@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		10D2D4D41ACBA380006EE39A /* emailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D2D4D31ACBA380006EE39A /* emailController.m */; };
 		10FEDABE1ACBD58900C61B88 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10FEDABC1ACBD58900C61B88 /* Main_iPhone.storyboard */; };
 		411882B31ABE9105002B8596 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 411882B21ABE9105002B8596 /* Foundation.framework */; };
 		411882B51ABE9105002B8596 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 411882B41ABE9105002B8596 /* CoreGraphics.framework */; };
@@ -68,8 +67,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		10D2D4D21ACBA380006EE39A /* emailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = emailController.h; path = "../../ios workspace/EmailPhotos/EmailPhotos/emailController.h"; sourceTree = "<group>"; };
-		10D2D4D31ACBA380006EE39A /* emailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = emailController.m; path = "../../ios workspace/EmailPhotos/EmailPhotos/emailController.m"; sourceTree = "<group>"; };
 		10FEDABD1ACBD58900C61B88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../Moments copy/ahMyFace_v1/Base.lproj/Main_iPhone.storyboard"; sourceTree = "<group>"; };
 		411882AF1ABE9105002B8596 /* ahMyFace_v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ahMyFace_v1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		411882B21ABE9105002B8596 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -238,8 +235,6 @@
 				41AA464B1ACA2C360095349A /* UNIHTTPRequestWithBody.m */,
 				10FEDABC1ACBD58900C61B88 /* Main_iPhone.storyboard */,
 				41AA464C1ACA2C360095349A /* Unirest-Prefix.pch */,
-				10D2D4D21ACBA380006EE39A /* emailController.h */,
-				10D2D4D31ACBA380006EE39A /* emailController.m */,
 				41AA464D1ACA2C360095349A /* UNIRest.h */,
 				41AA464E1ACA2C360095349A /* UNIRest.m */,
 				41AA464F1ACA2C360095349A /* UNIUrlConnection.h */,
@@ -441,7 +436,6 @@
 				41AA46541ACA2C360095349A /* UNISimpleRequest.m in Sources */,
 				41AA46511ACA2C360095349A /* Base64.m in Sources */,
 				41AA46591ACA2C360095349A /* UNIJsonNode.m in Sources */,
-				10D2D4D41ACBA380006EE39A /* emailController.m in Sources */,
 				41AA46571ACA2C360095349A /* UNIHTTPResponse.m in Sources */,
 				41AA46581ACA2C360095349A /* UNIHTTPStringResponse.m in Sources */,
 				411882FB1AC0D739002B8596 /* showFacesController.m in Sources */,
