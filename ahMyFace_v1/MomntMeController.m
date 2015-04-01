@@ -158,7 +158,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
 
 - (IBAction)capturePic:(id)sender {
-    [self performSegueWithIdentifier:@"capturePic" sender:nil];
+    [self performSegueWithIdentifier:@"testPicture" sender:nil];
     
 }
 
@@ -169,10 +169,10 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if ([[segue identifier] isEqualToString:@"capturePic"])
+    if ([[segue identifier] isEqualToString:@"testPicture"])
     {
-        //faceDetectController *FDC = [segue destinationViewController];
-        //[FDC setCaptured_image:self.current_image];
+        testFaceController *TFC = [segue destinationViewController];
+        [TFC setCaptured_image:self.current_image];
     }
 }
 

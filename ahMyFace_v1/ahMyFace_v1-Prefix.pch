@@ -19,6 +19,7 @@
     #import <CoreGraphics/CoreGraphics.h>
     #import <CoreVideo/CoreVideo.h>
     #import <CoreMedia/CoreMedia.h>
-    #import "AFNetworking.h"
-    #import "UNIRest.h" 
+    //#import "AFNetworking.h"
+    #import "UNIRest.h"
+    #import "KairosSDK.h"
 #endif

@@ -10,5 +10,6 @@
 
 @interface faceCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *facePic;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 
 @end

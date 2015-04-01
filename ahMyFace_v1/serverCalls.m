@@ -17,9 +17,24 @@ static NSString* const AlbumKey = @"af373ab0fbe1ec28578a56c025821f7cdef595bc0403
 
 @synthesize delegate;
 
-
 - (void) recognize_image: (UIImage*)image file_name: (NSString*) name
 {
+    UIImage *localImage = image;
+    [KairosSDK recognizeWithImage:localImage
+                        threshold:@".65"
+                      galleryName:@"gallery1"
+                       maxResults:@"10"
+                          success:^(NSDictionary *response) {
+                              
+                              
+                              [delegate client:self sendWithData:response ];
+                              
+                          } failure:^(NSDictionary *response) {
+                              
+                              NSLog(@"%@", response);
+                              
+                          }];
+ /*
     NSURL *baseURL = [NSURL URLWithString:BaseURLString];
     
     AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseURL];
@@ -48,15 +63,29 @@ static NSString* const AlbumKey = @"af373ab0fbe1ec28578a56c025821f7cdef595bc0403
         NSLog(@"Error: %@ ***** %@", operation.responseString, error);
     }];
     [op start];
+ */
     
 }
+ 
 
 - (void) train_image:(UIImage*)image file_name:(NSString*)name person_id:(NSString*)pid
 {
+    UIImage *localImage = image;
+    [KairosSDK enrollWithImage:localImage
+                     subjectId:pid
+                   galleryName:@"gallery1"
+                       success:^(NSDictionary *response) {
+                           
+                           NSLog(@"%@", response);
+                           [delegate client:self sendWithData:response ];
+                           
+                       } failure:^(NSDictionary *response) {
+                           
+                           NSLog(@"%@", response);
+                           
+                       }];
     
-    
-    //[image release];
-    
+    /*
     NSURL *baseURL = [NSURL URLWithString:BaseURLString];
     
     AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseURL];
@@ -77,7 +106,7 @@ static NSString* const AlbumKey = @"af373ab0fbe1ec28578a56c025821f7cdef595bc0403
     NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"image.jpg"];
     //NSURL *fileURL = [NSURL fileURLWithPath:filePath];
     [UIImageJPEGRepresentation(image,0.7) writeToFile:filePath atomically:YES];
-    /*
+    
     NSURL *fileURL = [NSURL URLWithString:filePath];
      NSLog(@"in train image. found place for picture");
     // Save image.
@@ -98,8 +127,7 @@ static NSString* const AlbumKey = @"af373ab0fbe1ec28578a56c025821f7cdef595bc0403
      {
          NSLog(@"Error: %@", error);
      }];
-    */
-    /*
+    
     //NSData *imageData = UIImageJPEGRepresentation(image, 0.3);
     NSLog(@"in train image. made picture");
     AFHTTPRequestOperation *op = [manager POST:@"album_train" parameters:params
@@ -126,9 +154,9 @@ static NSString* const AlbumKey = @"af373ab0fbe1ec28578a56c025821f7cdef595bc0403
     
     NSDictionary *headers = @{@"X-Mashape-Key": XMashapeKey};
     NSDictionary *parameters = params;
-  /*
+  
   @{@"album": @"CELEBS", @"albumkey": @"b1ccb6caa8cefb7347d0cfb65146d5e3f84608f6ee55b1c90d37ed4ecca9b273", @"entryid": @"TigerWoods", @"urls": @"http://www.lambdal.com/tiger.jpg"};
-   */
+   
     
     NSString *filePathat = [@"@" stringByAppendingString:filePath];
     NSURL *urlfiles = [NSURL URLWithString:filePathat];
@@ -162,6 +190,8 @@ static NSString* const AlbumKey = @"af373ab0fbe1ec28578a56c025821f7cdef595bc0403
         NSData *rawBody = response.rawBody;
         NSLog(@"discionaty is %@", body.JSONObject);
     }];
+     
+     */
    
 
 }

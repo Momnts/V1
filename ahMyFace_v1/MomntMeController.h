@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "testFaceController.h"
 
 @interface MomntMeController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate> {
     AVCaptureSession *_captureSession;

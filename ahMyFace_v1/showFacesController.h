@@ -13,5 +13,6 @@
 @interface showFacesController : UITableViewController <serverCallsDelegate>
 
 @property (strong, nonatomic) NSMutableArray *faces;
+@property (strong, nonatomic) NSMutableArray *names;
 
 @end

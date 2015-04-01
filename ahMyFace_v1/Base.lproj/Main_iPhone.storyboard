@@ -40,7 +40,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1265" y="-74"/>
+            <point key="canvasLocation" x="1265" y="-139"/>
         </scene>
         <!--Momnt Me Controller-->
         <scene sceneID="Yta-eP-7Tc">
@@ -71,17 +71,17 @@
                     <navigationItem key="navigationItem" id="fGU-Qs-1hX"/>
                     <connections>
                         <outlet property="captureButton" destination="Dyf-NK-JTo" id="pE6-KJ-Sax"/>
-                        <segue destination="XsC-LA-Nym" kind="push" id="oK9-vo-0ZJ"/>
+                        <segue destination="XsC-LA-Nym" kind="push" identifier="testPicture" id="oK9-vo-0ZJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MCD-Zi-M0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1242" y="643"/>
+            <point key="canvasLocation" x="1265" y="579"/>
         </scene>
-        <!--View Controller-->
+        <!--Test Face Controller-->
         <scene sceneID="lrN-hk-lB6">
             <objects>
-                <viewController id="XsC-LA-Nym" sceneMemberID="viewController">
+                <viewController id="XsC-LA-Nym" customClass="testFaceController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rr5-Kb-QgS"/>
                         <viewControllerLayoutGuide type="bottom" id="zrB-zY-Jbw"/>
@@ -89,13 +89,30 @@
                     <view key="view" contentMode="scaleToFill" id="Xqp-eF-wMJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRl-zl-UeO">
+                                <rect key="frame" x="20" y="519" width="280" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="recognize">
+                                    <color key="titleColor" red="0.94909137229999996" green="0.46882760060000001" blue="0.056935551479999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showFaces:" destination="XsC-LA-Nym" eventType="touchDown" id="e9k-Dm-kQT"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="zuQ-Pz-mLx"/>
+                    <connections>
+                        <outlet property="faceButton" destination="dRl-zl-UeO" id="cxk-E3-ntK"/>
+                        <segue destination="2BR-oX-uZ4" kind="push" identifier="seperateFaces" id="4Lb-h4-xHM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CvU-dU-Vyw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1714" y="643"/>
+            <point key="canvasLocation" x="1703" y="871"/>
         </scene>
         <!--Show Faces Controller-->
         <scene sceneID="i5k-QG-8cW">
@@ -114,12 +131,19 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EDO-TX-LNQ">
-                                            <rect key="frame" x="48" y="13" width="220" height="210"/>
+                                            <rect key="frame" x="8" y="8" width="137" height="141"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Yb-xB-Eed">
+                                            <rect key="frame" x="8" y="175" width="304" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="facePic" destination="EDO-TX-LNQ" id="xRg-BL-5mJ"/>
+                                    <outlet property="nameLabel" destination="7Yb-xB-Eed" id="Xfp-go-e8I"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -132,7 +156,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wkd-bU-N92" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2186" y="-46"/>
+            <point key="canvasLocation" x="2176" y="869"/>
         </scene>
         <!--Face Detect Controller-->
         <scene sceneID="SIB-ks-lWC">
@@ -170,12 +194,12 @@
                     <connections>
                         <outlet property="facesButton" destination="sdw-3R-8Gm" id="8YZ-xc-otX"/>
                         <outlet property="labelTextField" destination="M6Q-t1-r3z" id="Dmu-U8-mCH"/>
-                        <segue destination="u3P-u6-5bC" kind="push" id="QrL-90-uos"/>
+                        <segue destination="u3P-u6-5bC" kind="push" identifier="backToHome" id="QrL-90-uos"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ogd-kP-pxN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1809" y="-572"/>
+            <point key="canvasLocation" x="1703" y="-850"/>
         </scene>
         <!--Home Controller-->
         <scene sceneID="cs1-hj-WUU">
@@ -224,7 +248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dD2-3Q-uRU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="729" y="-337"/>
+            <point key="canvasLocation" x="605" y="-139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3a2-YA-MnA">

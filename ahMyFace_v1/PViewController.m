@@ -21,7 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor darkGrayColor];
+    self.view.backgroundColor = [UIColor lightGrayColor];
     self.captureButton.layer.cornerRadius = 2;
     self.captureButton.layer.borderWidth = 2;
     self.captureButton.layer.borderColor = [UIColor redColor].CGColor;

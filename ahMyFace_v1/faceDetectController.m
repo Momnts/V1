@@ -28,13 +28,13 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
-    //add Button
-    self.view.backgroundColor = [UIColor darkGrayColor];
+    // Add button
+    self.view.backgroundColor = [UIColor lightGrayColor];
     self.facesButton.layer.cornerRadius = 2;
     self.facesButton.layer.borderWidth = 2;
     self.facesButton.layer.borderColor = [UIColor redColor].CGColor;
     
-    //add text field
+    // Add text field
     CGRect labelTextFieldFrame = CGRectMake(20.0f, 200.0f, 280.0f, 31.0f);
     _labelTextField.placeholder = @"Name";
     _labelTextField.backgroundColor = [UIColor whiteColor];
@@ -46,14 +46,13 @@
     _labelTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     _labelTextField.tag = 1;
     _labelTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    //_labelTextField.delegate = self;
-    //[self.view addSubview:_labelTextField];
+
     
     self.imageView = nil;
     //Adding new picture
     [self loadImage];
-    //Detect face
-    //[self faceDetector];
+    
+    [KairosSDK initWithAppId:@"1bf095ad" appKey:@"64b5e29cf8484c0d25d61467b4da7558"];
 }
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     NSLog(@"touchesBegan:withEvent:");
@@ -74,14 +73,12 @@
     
     self.imageView = [[UIImageView alloc] init];
     self.imageView.frame = CGRectMake(0, 0, 300, 400);
-    //self.imageView.contentMode = UIViewContentModeCenter;
-    [self.imageView setCenter:CGPointMake(self.view.bounds.size.width/2, (self.view.bounds.size.height/2)-30)];                //setPosition:CGPointMake(CGRectGetMidX(layerRect), CGRectGetMidY(layerRect))
+    [self.imageView setCenter:CGPointMake(self.view.bounds.size.width/2, (self.view.bounds.size.height/2)-30)];
     self.imageView.image = self.captured_image;
     [self.view addSubview:self.imageView];
 }
 
 - (IBAction)showFaces:(id)sender {
-    //[self performSegueWithIdentifier:@"showFaces" sender:Nil];
     serverCalls *client = [[serverCalls alloc] init];
     client.delegate = self;
     
@@ -89,6 +86,53 @@
     [client train_image:self.captured_image file_name:@"test.jpg" person_id:_labelTextField.text];
     
 }
+
+-(void)client:(serverCalls *)serverCalls sendWithData:(NSDictionary *)responseObject {
+    NSLog(@"object is %@", [responseObject objectForKey:@"transaction"]);
+    NSString *success = [[responseObject objectForKey:@"transaction"] objectForKey:@"success"];
+    if([success caseInsensitiveCompare:@"success"] == NSOrderedSame )
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Awesome"
+                                                        message:@"Your face has been calibrated and saved!"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"One More Time..."
+                                                        message:@"Face calibration failed."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
+-(void)alertView:(UIAlertView*) alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    
+    if(buttonIndex==0)
+    {
+         [self performSegueWithIdentifier:@"backToHome" sender:nil];
+    }
+        
+}
+
+// In a story board-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    
+    if ([[segue identifier] isEqualToString:@"backToHome"])
+    {
+        HomeController *HC = [segue destinationViewController];
+    }
+}
+
+@end
 
 /*
 
@@ -244,18 +288,4 @@
 }
 */
 
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    
-    if ([[segue identifier] isEqualToString:@"showFaces"])
-    {
-        showFacesController *SFC = [segue destinationViewController];
-        [SFC setFaces:_faceArray];
-    }
-}
 
-@end

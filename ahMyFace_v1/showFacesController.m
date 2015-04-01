@@ -32,11 +32,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    serverCalls *client = [[serverCalls alloc] init];
-    client.delegate = self;
-    
-    [client recognize_image:[self.faces objectAtIndex:0] file_name:@"test.jpg"];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,6 +66,7 @@
     long row = [indexPath row];
     //cell.bounds.size.height = [[[_faces objectAtIndex:row]
     [cell.facePic setImage:[_faces objectAtIndex:row]];
+    cell.nameLabel.text = [self.names objectAtIndex:row];
     
     return cell;
 }

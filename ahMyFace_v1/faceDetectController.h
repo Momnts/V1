@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "showFacesController.h"
 #import "serverCalls.h"
+#import "HomeController.h"
 
-@interface faceDetectController : UIViewController <serverCallsDelegate>
+@interface faceDetectController : UIViewController <serverCallsDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property UIImage *captured_image;
