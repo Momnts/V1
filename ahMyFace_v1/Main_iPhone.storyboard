@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C2043" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3wz-hw-rlh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3wz-hw-rlh">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
@@ -137,11 +137,8 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EDO-TX-LNQ">
-                                            <rect key="frame" x="0.0" y="49" width="320" height="133"/>
+                                            <rect key="frame" x="8" y="34" width="153" height="133"/>
                                         </imageView>
-                                        <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Xd-gH-tvM">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        </navigationBar>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -155,19 +152,13 @@
                             <outlet property="delegate" destination="2BR-oX-uZ4" id="rQf-KS-Hoa"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem title="send" id="CjN-Qi-BTD">
-                            <connections>
-                                <action selector="send:" destination="2BR-oX-uZ4" id="hmx-Rw-Fib"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="c62-gF-Ex5"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wkd-bU-N92" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2234" y="788"/>
+            <point key="canvasLocation" x="2234" y="786"/>
         </scene>
         <!--Face Detect Controller-->
         <scene sceneID="SIB-ks-lWC">
@@ -277,7 +268,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b1k-hK-tR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="267" y="128"/>
+            <point key="canvasLocation" x="71" y="68"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -286,6 +277,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="QrL-90-uos"/>
+        <segue reference="Ijd-We-Xil"/>
     </inferredMetricsTieBreakers>
 </document>

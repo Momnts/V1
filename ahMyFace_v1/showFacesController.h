@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "faceCell.h"
 #import "serverCalls.h"
+#import "emailController.h"
 
 @interface showFacesController : UITableViewController <serverCallsDelegate>
 
 @property (strong, nonatomic) NSMutableArray *faces;
 @property (strong, nonatomic) NSMutableArray *names;
 - (IBAction)send:(id)sender;
+-(void) sendEmail;
 
 
 @end

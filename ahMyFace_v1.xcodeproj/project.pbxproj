@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		10FEDABE1ACBD58900C61B88 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10FEDABC1ACBD58900C61B88 /* Main_iPhone.storyboard */; };
 		411882B31ABE9105002B8596 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 411882B21ABE9105002B8596 /* Foundation.framework */; };
 		411882B51ABE9105002B8596 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 411882B41ABE9105002B8596 /* CoreGraphics.framework */; };
 		411882B71ABE9105002B8596 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 411882B61ABE9105002B8596 /* UIKit.framework */; };
@@ -54,6 +53,7 @@
 		41AA46611ACA7BF80095349A /* libKairosSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41AA46601ACA7BF80095349A /* libKairosSDK.a */; };
 		41AA46631ACA7C4F0095349A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41AA46621ACA7C4F0095349A /* AudioToolbox.framework */; };
 		41AA466C1ACA94650095349A /* testFaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AA466B1ACA94650095349A /* testFaceController.m */; };
+		41AA466E1ACBDDA20095349A /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41AA466D1ACBDDA20095349A /* Main_iPhone.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +67,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		10FEDABD1ACBD58900C61B88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../Moments copy/ahMyFace_v1/Base.lproj/Main_iPhone.storyboard"; sourceTree = "<group>"; };
 		411882AF1ABE9105002B8596 /* ahMyFace_v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ahMyFace_v1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		411882B21ABE9105002B8596 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		411882B41ABE9105002B8596 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -142,6 +141,7 @@
 		41AA46621ACA7C4F0095349A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		41AA466A1ACA94650095349A /* testFaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testFaceController.h; sourceTree = "<group>"; };
 		41AA466B1ACA94650095349A /* testFaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testFaceController.m; sourceTree = "<group>"; };
+		41AA466D1ACBDDA20095349A /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +223,7 @@
 		411882B81ABE9105002B8596 /* ahMyFace_v1 */ = {
 			isa = PBXGroup;
 			children = (
+				41AA466D1ACBDDA20095349A /* Main_iPhone.storyboard */,
 				41AA46321ACA2C350095349A /* Base64.h */,
 				41AA46331ACA2C360095349A /* Base64.m */,
 				41AA46341ACA2C360095349A /* HttpRequest */,
@@ -233,7 +234,6 @@
 				41AA46491ACA2C360095349A /* UNIHTTPRequest.m */,
 				41AA464A1ACA2C360095349A /* UNIHTTPRequestWithBody.h */,
 				41AA464B1ACA2C360095349A /* UNIHTTPRequestWithBody.m */,
-				10FEDABC1ACBD58900C61B88 /* Main_iPhone.storyboard */,
 				41AA464C1ACA2C360095349A /* Unirest-Prefix.pch */,
 				41AA464D1ACA2C360095349A /* UNIRest.h */,
 				41AA464E1ACA2C360095349A /* UNIRest.m */,
@@ -405,7 +405,7 @@
 			files = (
 				411882F81ABEABC2002B8596 /* jimStark.png in Resources */,
 				411882C91ABE9105002B8596 /* Main_iPad.storyboard in Resources */,
-				10FEDABE1ACBD58900C61B88 /* Main_iPhone.storyboard in Resources */,
+				41AA466E1ACBDDA20095349A /* Main_iPhone.storyboard in Resources */,
 				411882CE1ABE9105002B8596 /* Images.xcassets in Resources */,
 				411882BD1ABE9105002B8596 /* InfoPlist.strings in Resources */,
 			);
@@ -472,14 +472,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		10FEDABC1ACBD58900C61B88 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				10FEDABD1ACBD58900C61B88 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
 		411882BB1ABE9105002B8596 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

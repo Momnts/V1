@@ -27,6 +27,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Send"
+                                                                    style:UIBarButtonItemStyleDone
+                                                                   target:self
+                                                                   action:@selector(sendEmail:)];
+    self.navigationItem.rightBarButtonItem = rightButton;
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -37,6 +43,11 @@
 
 }
 
+-(void) sendEmail:(id) sender
+{
+    NSLog(@"in action");
+    [self performSegueWithIdentifier:@"send" sender:nil];
+}
 
 
 - (void)didReceiveMemoryWarning
@@ -120,6 +131,7 @@
     
     if ([[segue identifier] isEqualToString:@"send"])
     {
+        NSLog(@"sending email");
         emailController *EC = [segue destinationViewController];
         [EC setFaces:self.faces];
         [EC setNames:self.names];
