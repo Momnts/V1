@@ -15,6 +15,7 @@
 
 @property (strong, nonatomic) NSMutableArray *faces;
 @property (strong, nonatomic) NSMutableArray *names;
+@property (strong, nonatomic) UIImage *captured_image;
 
 
 

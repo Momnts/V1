@@ -99,8 +99,8 @@
         MFMessageComposeViewController *textView = [[MFMessageComposeViewController alloc ]init];
         textView.messageComposeDelegate = self;
         [textView setBody:message];
-        [textView setRecipients:recipents];
-        NSData *exportData = UIImageJPEGRepresentation([self.faces objectAtIndex:0],1.0);
+        [textView setRecipients:self.names];
+        NSData *exportData = UIImageJPEGRepresentation(self.captured_image,1.0);
 
         [textView addAttachmentData:exportData typeIdentifier:@"public.data" filename:@"image.png"];
 

@@ -201,6 +201,7 @@
         showFacesController *HC = [segue destinationViewController];
         [HC setFaces:self.faces];
         [HC setNames:self.names];
+        [HC setCaptured_image:self.captured_image];
     }
 }
 
