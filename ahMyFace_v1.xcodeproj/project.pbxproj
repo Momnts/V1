@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10B954D51ACD8A5C006CB661 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B954D41ACD8A5C006CB661 /* MessageUI.framework */; };
+		10B954D81ACD8AB8006CB661 /* MessageConrollerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B954D71ACD8AB8006CB661 /* MessageConrollerViewController.m */; };
 		411882B31ABE9105002B8596 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 411882B21ABE9105002B8596 /* Foundation.framework */; };
 		411882B51ABE9105002B8596 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 411882B41ABE9105002B8596 /* CoreGraphics.framework */; };
 		411882B71ABE9105002B8596 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 411882B61ABE9105002B8596 /* UIKit.framework */; };
@@ -67,6 +69,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10B954D41ACD8A5C006CB661 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		10B954D61ACD8AB8006CB661 /* MessageConrollerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageConrollerViewController.h; sourceTree = "<group>"; };
+		10B954D71ACD8AB8006CB661 /* MessageConrollerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageConrollerViewController.m; sourceTree = "<group>"; };
 		411882AF1ABE9105002B8596 /* ahMyFace_v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ahMyFace_v1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		411882B21ABE9105002B8596 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		411882B41ABE9105002B8596 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -149,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10B954D51ACD8A5C006CB661 /* MessageUI.framework in Frameworks */,
 				41AA46631ACA7C4F0095349A /* AudioToolbox.framework in Frameworks */,
 				411882EB1ABE9144002B8596 /* CoreImage.framework in Frameworks */,
 				4118833E1AC3D23D002B8596 /* SystemConfiguration.framework in Frameworks */,
@@ -203,6 +209,7 @@
 		411882B11ABE9105002B8596 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				10B954D41ACD8A5C006CB661 /* MessageUI.framework */,
 				41AA46621ACA7C4F0095349A /* AudioToolbox.framework */,
 				4118833D1AC3D23D002B8596 /* SystemConfiguration.framework */,
 				4118833B1AC3D231002B8596 /* MobileCoreServices.framework */,
@@ -260,6 +267,8 @@
 				411882B91ABE9105002B8596 /* Supporting Files */,
 				41AA466A1ACA94650095349A /* testFaceController.h */,
 				41AA466B1ACA94650095349A /* testFaceController.m */,
+				10B954D61ACD8AB8006CB661 /* MessageConrollerViewController.h */,
+				10B954D71ACD8AB8006CB661 /* MessageConrollerViewController.m */,
 			);
 			path = ahMyFace_v1;
 			sourceTree = "<group>";
@@ -372,7 +381,7 @@
 				ORGANIZATIONNAME = "Naren Sathiya";
 				TargetAttributes = {
 					411882AE1ABE9105002B8596 = {
-						DevelopmentTeam = 29S4B9YBSU;
+						DevelopmentTeam = KJNK2D9NDF;
 					};
 					411882D21ABE9105002B8596 = {
 						TestTargetID = 411882AE1ABE9105002B8596;
@@ -441,6 +450,7 @@
 				411882FB1AC0D739002B8596 /* showFacesController.m in Sources */,
 				411882FE1AC0D8EC002B8596 /* faceCell.m in Sources */,
 				411883B11AC4A17A002B8596 /* HomeController.m in Sources */,
+				10B954D81ACD8AB8006CB661 /* MessageConrollerViewController.m in Sources */,
 				41AA46531ACA2C360095349A /* UNIBodyRequest.m in Sources */,
 				411882F61ABE935B002B8596 /* faceDetectController.m in Sources */,
 				41AA46521ACA2C360095349A /* UNIBaseRequest.m in Sources */,
@@ -578,6 +588,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ahMyFace_v1/ahMyFace_v1-Prefix.pch";
 				INFOPLIST_FILE = "ahMyFace_v1/ahMyFace_v1-Info.plist";
@@ -596,6 +607,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ahMyFace_v1/ahMyFace_v1-Prefix.pch";
 				INFOPLIST_FILE = "ahMyFace_v1/ahMyFace_v1-Info.plist";

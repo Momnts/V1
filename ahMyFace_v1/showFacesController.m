@@ -8,6 +8,7 @@
 
 #import "showFacesController.h"
 #import "emailController.h"
+#import "MessageConrollerViewController.h"
 
 @interface showFacesController ()
 
@@ -27,11 +28,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+   
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Send"
                                                                     style:UIBarButtonItemStyleDone
                                                                    target:self
                                                                    action:@selector(sendEmail:)];
+   
     self.navigationItem.rightBarButtonItem = rightButton;
 
     // Uncomment the following line to preserve selection between presentations.
@@ -43,10 +45,10 @@
 
 }
 
--(void) sendEmail:(id) sender
-{
-    NSLog(@"in action");
-    [self performSegueWithIdentifier:@"send" sender:nil];
+-(void) sendEmail:(id) sender{
+    NSLog(@"Sending Email (sendEmailFunction");
+    [self sendSMS];
+   // [self performSegueWithIdentifier:@"send" sender:self];
 }
 
 
@@ -86,6 +88,55 @@
     return cell;
 }
 
+
+- (void) sendSMS{
+    
+    if([MFMessageComposeViewController canSendText]){
+        
+        NSArray *recipents = @[@"8586636233"];
+        NSString *message = @"MOMENTS";
+        
+        MFMessageComposeViewController *textView = [[MFMessageComposeViewController alloc ]init];
+        textView.messageComposeDelegate = self;
+        [textView setBody:message];
+        [textView setRecipients:recipents];
+        NSData *exportData = UIImageJPEGRepresentation([self.faces objectAtIndex:0],1.0);
+
+        [textView addAttachmentData:exportData typeIdentifier:@"public.data" filename:@"image.png"];
+
+        [self presentViewController:textView animated:YES completion:nil];
+        
+        
+    }else{
+        NSString *result = @"SMS was not suported by this phone";
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:result delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: @"ok", nil];
+        [alert show];
+        NSLog(@"%@",result);
+    }
+}
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult) result
+{
+    switch (result) {
+        case MessageComposeResultCancelled:
+            break;
+            
+        case MessageComposeResultFailed:
+        {
+            UIAlertView *warningAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Failed to send SMS!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [warningAlert show];
+            break;
+        }
+            
+        case MessageComposeResultSent:
+            break;
+            
+        default:
+            break;
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -123,21 +174,24 @@
     // Return NO if you do not want the item to be re-orderable.
     return YES;
 }
-*/
+
 
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+     NSLog(@"Attempting to preform Segue");
     if ([[segue identifier] isEqualToString:@"send"])
     {
-        NSLog(@"sending email");
-        emailController *EC = [segue destinationViewController];
-        [EC setFaces:self.faces];
-        [EC setNames:self.names];
+       
+        MessageConrollerViewController *MC = [segue destinationViewController];
+       // NSLog(@"%lu", sizeof(self.faces));
+       // [MC setFaces:self.faces];
+       //cs [MC setNames:self.names];
+    }else{
+        NSLog(@"we do not have a segue for you yet");
     }
 }
 
-- (IBAction)send:(id)sender {
-}
+*/
+
 @end
